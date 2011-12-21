@@ -1,7 +1,7 @@
 package de.matt3o.bruchrechner;
 
 public class Fraction {
-	/** Deutsch: ZŠhler */
+	/** Deutsch: Zï¿½hler */
 	private int numerator;
 	
 	/** Deutsch: Nenner */
@@ -10,30 +10,32 @@ public class Fraction {
 	/**
 	 * Erzeugt eine neue Fraction Instance
 	 * 
-	 * @param numerator Der ZŠhler
+	 * @param numerator Der Zï¿½hler
 	 * @param denominator Der Nenner
-	 * @throws FractionException Wird ausgelšst, wenn der Nenner oder ZŠhler eine 0 enthŠlt.
+	 * @throws FractionException Wird ausgelï¿½st, wenn der Nenner oder Zï¿½hler eine 0 enthï¿½lt.
 	 */
 	public Fraction( int numerator, int denominator ) throws FractionException {
 		if ( numerator == 0 || denominator == 0 ){
 			throw new FractionException();
 		}
 		
+		//Test
+		
 		this.numerator = numerator;
 		this.denominator = denominator;
 	}
 	
 	/**
-	 * Gibt den numerator (ZŠhler) zurŸck.
+	 * Gibt den numerator (Zï¿½hler) zurï¿½ck.
 	 * 
-	 * @return numerator (ZŠhler)
+	 * @return numerator (Zï¿½hler)
 	 */
 	public int getNumerator(){
 		return numerator;
 	}
 	
 	/**
-	 * Gibt den denominator (Nenner) zurŸck.
+	 * Gibt den denominator (Nenner) zurï¿½ck.
 	 * @return denominator (Nenner)
 	 */
 	public int getDenominator(){
@@ -41,7 +43,7 @@ public class Fraction {
 	}
 	
 	/**
-	 * Gibt das GGF zurŸck.
+	 * Gibt das GGF zurï¿½ck.
 	 * 
 	 * @author http://de.wikipedia.org/wiki/Euklidischer_Algorithmus#Rekursive_Variante
 	 * @return Den GGF
@@ -54,7 +56,7 @@ public class Fraction {
 	}
 	
 	/**
-	 * Gibt das GGF zurŸck
+	 * Gibt das GGF zurï¿½ck
 	 * @return Den GGF
 	 */
 	public int getGGF(){
@@ -62,9 +64,9 @@ public class Fraction {
 	}
 	
 	/**
-	 * KŸrtzt den Aktuellen bruch.
+	 * Kï¿½rtzt den Aktuellen bruch.
 	 * 
-	 * @return Ein neuer - aber gekŸrztz Bruch.
+	 * @return Ein neuer - aber gekï¿½rztz Bruch.
 	 */
 	public Fraction trim(){
 		int ggf = getGGF();
@@ -81,13 +83,13 @@ public class Fraction {
 	
 	
 	/**
-	 * Addiert 2 BrŸche miteinander
-	 * Es kšnnen nur BrŸche miteinander Multipliziert werden, wenn die ZŠhler gleich sein!
+	 * Addiert 2 Brï¿½che miteinander
+	 * Es kï¿½nnen nur Brï¿½che miteinander Multipliziert werden, wenn die Zï¿½hler gleich sein!
 	 * 
 	 * @param summand2 Den Wert, mit dem der Bruch Addiert werden soll.
-	 * @return Ein neuen Bruch, wo beide BrŸche Addiert werden.
-	 * @throws FractionException Wird geworfen, wenn der neue Bruch eine 0 enthŠlt.
-	 * @throws MathException Wird geworfen, wenn nenner und zŠhler ungleich sind.
+	 * @return Ein neuen Bruch, wo beide Brï¿½che Addiert werden.
+	 * @throws FractionException Wird geworfen, wenn der neue Bruch eine 0 enthï¿½lt.
+	 * @throws MathException Wird geworfen, wenn nenner und zï¿½hler ungleich sind.
 	 */
 	public Fraction addition( Fraction summand2 ) throws FractionException, MathException{
 		int numerator;
@@ -99,16 +101,16 @@ public class Fraction {
 			return new Fraction( numerator, denominator ).trim();
 		}
 		
-		throw new MathException( "Die beiden Nenner mŸssen gleich sein!" );
+		throw new MathException( "Die beiden Nenner mï¿½ssen gleich sein!" );
 	}
 	
 	/**
-	 * Subtrahiert 2 BrŸche miteinander.
+	 * Subtrahiert 2 Brï¿½che miteinander.
 	 * 
 	 * @param subtrahend Der Subtrahend (2. Zahl, mit der der Bruch Subtrahiert wird).
-	 * @return Ein neuen Bruch, wo beide BrŸche Addiert werden.
-	 * @throws FractionException Wird geworfen, wenn der neue Bruch eine 0 enthŠlt.
-	 * @throws MathException Wird geworfen, wenn nenner und zŠhler ungleich sind.
+	 * @return Ein neuen Bruch, wo beide Brï¿½che Addiert werden.
+	 * @throws FractionException Wird geworfen, wenn der neue Bruch eine 0 enthï¿½lt.
+	 * @throws MathException Wird geworfen, wenn nenner und zï¿½hler ungleich sind.
 	 */
 	public Fraction subtract( Fraction subtrahend ) throws FractionException, MathException{
 		if ( subtrahend.getDenominator() == this.getDenominator() ){
@@ -118,15 +120,15 @@ public class Fraction {
 			return new Fraction( numerator, denominator );
 		}
 		
-		throw new MathException( "Die beiden Nenner mŸssen gleich sein!" );
+		throw new MathException( "Die beiden Nenner mï¿½ssen gleich sein!" );
 	}
 	
 	/**
-	 * Multipliziert die beiden BrŸche miteinander.
+	 * Multipliziert die beiden Brï¿½che miteinander.
 	 * 
 	 * @param multiplier Der Multiplikator (2. Zahl, mit der der Bruch Multipliziert wird.)
-	 * @return Ein neuer Burch, wo beide BrŸche Multipliziert werden.
-	 * @throws FractionException Wird geworfen, wenn der neue Bruch eine 0 enthŠlt.
+	 * @return Ein neuer Burch, wo beide Brï¿½che Multipliziert werden.
+	 * @throws FractionException Wird geworfen, wenn der neue Bruch eine 0 enthï¿½lt.
 	 */
 	public Fraction multiplicat( Fraction multiplier ) throws FractionException{
 		int numerator = multiplier.getNumerator() * this.getNumerator();
@@ -136,10 +138,10 @@ public class Fraction {
 	}
 	
 	/**
-	 * Dividiert die beiden BrŸche miteinander.
+	 * Dividiert die beiden Brï¿½che miteinander.
 	 * @param divisor Der Divisor (2. Zahl, mit der der Bruch Division wird.)
-	 * @return Ein neuer Bruch, wo beide BrŸche Multipliziert werden.
-	 * @throws FractionException Wird geworfen, wenn ein neuer Bruch eine 0 enthŠlt.
+	 * @return Ein neuer Bruch, wo beide Brï¿½che Multipliziert werden.
+	 * @throws FractionException Wird geworfen, wenn ein neuer Bruch eine 0 enthï¿½lt.
 	 */
 	public Fraction division( Fraction divisor ) throws FractionException{
 		Fraction reciprocalValue = new Fraction( divisor.getDenominator(), divisor.getNumerator() );
